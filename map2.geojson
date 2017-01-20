@@ -4,7 +4,7 @@
     {
       "type": "Feature",
       "properties": {
-        "text": "<div><strong>Beispieltext</strong></div><div>foobar</div>"
+        "text": "<div><strong>Beispieltext</strong></div><div>foobar</div><div><a href='geo:5.997569561004638, 50.99288103999011'>go here</a></div>"
       },
       "geometry": {
         "type": "Point",
