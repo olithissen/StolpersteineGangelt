@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css" />
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.js"></script>
 <script type="text/javascript" src="leafletembed.js"></script>
 <body>
@@ -20,11 +21,12 @@
 </nav>
 
 <!-- Slide Show -->
+<!--
 <section>
   <img class="mySlides" src="16-9.png"
   style="width:100%;height:400px">
 </section>
-
+-->
 <!-- Map Description -->
 <section>
 	<div id="map" style="width:100%;height:400px"></div>
@@ -73,19 +75,7 @@
 	
 // Automatic Slideshow - change image every 3 seconds
 var myIndex = 0;
-carousel();
 
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 3000);
-}
 </script>
 
 </body>
