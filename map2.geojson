@@ -3,7 +3,9 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "text": "<div><strong>Beispieltext</strong></div><div>foobar</div>"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
