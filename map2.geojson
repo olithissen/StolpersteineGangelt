@@ -1,51 +1,244 @@
 {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "text": "<div><strong>Beispieltext</strong></div><div>foobar</div><div><a href='geo:5.997569561004638, 50.99288103999011'>go here</a></div>"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.997569561004638,
-          50.99288103999011
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.995144844055175,
-          50.99136161009171
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.995633006095886,
-          50.99383319070555
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.99791020154953,
-          50.99336218242091
-        ]
-      }
-    }
-  ]
+    "type": "FeatureCollection",
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Bruchstraße 26",
+                "name": "Minna Falkenstein",
+                "text": "Hier wohnte<br/><span class='name'>Minna Falkenstein</span><br/>verh. Sassen<br/>Jg. 1874<br/>Flucht Holland<br/>Interniert Westerbork<br/>Deportiert 1943<br/>Sobibor<br/>Ermordet 14.5.1943"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.995150208473206,
+                    50.991351480392105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Bruchstraße 26",
+                "name": "Emil Falkenstein",
+                "text": "Hier wohnte<br/><span class='name'>Emil Falkenstein</span><br/>Jg. 1870<br/>Deportiert 1942<br/>Theresienstadt<br/>1942 Treblinka<br/>Ermordet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.995150208473206,
+                    50.991351480392105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Bruchstraße 26",
+                "name": "Jeanette Falkenstein",
+                "text": "Hier wohnte<br/><span class='name'>Jeanette Falkenstein</span><br/>geb. Lichtenstein<br/>Jg. 1880<br/>Deportiert 1942<br/>Theresienstadt<br/>1942 Treblinka<br/>Ermordet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.995150208473206,
+                    50.991351480392105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Bruchstraße 26",
+                "name": "Julia Falkenstein",
+                "text": "Hier wohnte<br/><span class='name'>Julia Falkenstein</span><br/>verh. Zeligmann<br/>Jg. 1881<br/>Deportiert<br/>Auschwitz<br/>Ermordet 29.10.1942"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.995150208473206,
+                    50.991351480392105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Bruchstraße 26",
+                "name": "Hermann Falkenstein",
+                "text": "Hier wohnte<br/><span class='name'>Hermann Falkenstein</span><br/>Jg. 1907<br/>Fluch 1936 Holland<br/>Interniert Westerbork<br/>Deportiert 1943<br/>Sobibor<br/>Ermordet 18.7.1943"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.995150208473206,
+                    50.991351480392105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Bruchstraße 26",
+                "name": "Meta Falkenstein",
+                "text": "Hier wohnte<br/><span class='name'>Meta Falkenstein</span><br/>verh. Marx<br/>Jg. 1910<br/>Flucht 1938 Holland<br/>Mit Hilfe<br/>überlebt"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.995150208473206,
+                    50.991351480392105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Wallstraße 15",
+                "name": "Sara Hertz",
+                "text": "Hier wohnte<br/><span class='name'>Sara Hertz</span><br/>Jg. 1859<br/>Deportiert 1942<br/>Theresienstadt<br/>Ermordet 19.12.1942"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.995609,
+                    50.99383
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Heinsberger Straße 11",
+                "name": "Isaak Lichtenstein",
+                "text": "Hier wohnte<br/><span class='name'>Isaak Lichtenstein</span><br/>Synagogenverwalter<br/>Jg. 1867<br/>Deportiert 1942<br/>Theresienstadt<br/>Ermordet 2.4.1943"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.99791,
+                    50.99337
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Heinsberger Straße 11",
+                "name": "Regina Lichtenstein",
+                "text": "Hier wohnte<br/><span class='name'>Regina Lichtenstein</span><br/>geb. Falkenstein<br/>Jg. 1868<br/>Deportiert 1942<br/>Theresienstadt<br/>Ermordet 16.7.1944"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.99791,
+                    50.99337
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Heinsberger Straße 2",
+                "name": "Familie Josephs",
+                "text": "Hier war das<br/>Wohn- und Kaufhaus<br/><span class='name'>der Familie Josephs</span><br/>Erworben 1925<br/>'Arisiert' 1938"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.997545421123505,
+                    50.992848963650715
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Heinsberger Straße 2",
+                "name": "Albert Josephs",
+                "text": "<span class='name'>Albert Josephs</span><br/>Jg. 1890<br/>'Schutzhaft' 1938<br/>Sachsenhausen<br/>1941 Lager Stolberg<br/>Deportiert 1942<br/>Ermordet in<br/>Sobibor"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.997545421123505,
+                    50.992848963650715
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Heinsberger Straße 2",
+                "name": "Karl Josephs",
+                "text": "<span class='name'>Karl Josephs</span><br/>Jg. 1927<br/>Deportiert 1942<br/>Ermordet in<br/>Sobibor"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.997545421123505,
+                    50.992848963650715
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Heinsberger Straße 2",
+                "name": "Frieda Josephs",
+                "text": "<span class='name'>Frieda Josephs</span><br/>geb. Weil<br/>Jg. 1903<br/>Deportiert 1942<br/>Izbica<br/>Ermordet in<br/>Sobibor"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.997545421123505,
+                    50.992848963650715
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Heinsberger Straße 2",
+                "name": "Hugo Josephs",
+                "text": "<span class='name'>Hugo Josephs</span><br/>Jg. 1892<br/>Deportiert 1942<br/>Zamosc<br/>Ermordet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.997545421123505,
+                    50.992848963650715
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "established": "2016-02-16",
+                "address": "Heinsberger Straße 2",
+                "name": "Erna Josephs",
+                "text": "<span class='name'>Erna Josephs</span><br/>geb. Herz<br/>Jg. 1905<br/>Deportiert 1942<br/>Zamosc<br/>Ermordet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.997545421123505,
+                    50.992848963650715
+                ]
+            }
+        }
+    ]
 }

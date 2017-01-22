@@ -2,22 +2,24 @@
 <html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css" />
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.js"></script>
-<script type="text/javascript" src="leafletembed.js"></script>
+
+<head>
+    <link rel="import" href="bootstrap.html">
+    <script>
+        var link = document.querySelector('link[rel="import"]');
+        // Clone the <template> in the import.
+        var template = link.import.querySelector('template');
+        var clone = document.importNode(template.content, true);
+    </script>
+</head>
 
 <body>
 
     <!-- Navigation -->
     <nav>
         <ul class="w3-navbar w3-black">
-            <li><a href="javascript:void(0)">Home</a></li>
-            <li><a href="javascript:void(0)">Band</a></li>
-            <li><a href="javascript:void(0)">Tour</a></li>
-            <li><a href="javascript:void(0)">Contact</a></li>
+            <li><a href="#stolpersteine">Stolpersteine in Gangelt</a></li>
+            <li><a href="#menschen">Menschen</a></li>
         </ul>
     </nav>
 
@@ -29,51 +31,50 @@ style="width:100%;height:400px"> </section> -->
         <div id="map" style="width:100%;height:400px"></div>
     </section>
 
-    <!-- Band Description -->
-    <section class="w3-container w3-center w3-content" style="max-width:600px">
-        <h2 class="w3-wide">FOO</h2>
-        <p class="w3-opacity"><i>We love music</i></p>
-        <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <section id="stolpersteine" class="w3-container w3-center w3-content" style="max-width:600px">
+        <h2 class="w3-wide">Stolpersteine</h2>
+        <p class="w3-opacity"><i>in Gangelt</i></p>
+        <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
     </section>
 
-    <!-- Band Members -->
-    <section class="w3-row-padding w3-center w3-light-grey">
-        <article class="w3-third">
-            <p>John</p>
-            <img src="img_bandmember.jpg" alt="Random Name" style="width:100%">
-            <p>John is the smartest.</p>
-        </article>
-        <article class="w3-third">
-            <p>Paul</p>
-            <img src="img_bandmember.jpg" alt="Random Name" style="width:100%">
-            <p>Paul is the prettiest.</p>
-        </article>
-        <article class="w3-third">
-            <p>Ringo</p>
-            <img src="img_bandmember.jpg" alt="Random Name" style="width:100%">
-            <p>Ringo is the funniest.</p>
-        </article>
+    <!--<section id="menschen" class="w3-row-padding w3-center">-->
+    <section id="menschen" class="w3-row-padding w3-center w3-light-grey">
+        <h2>Menschen</h2>
+        <script id="template" type="x-tmpl-mustache">
+            {{#features}}
+            <article class="w3-third">
+                <header>
+                    <h4>{{properties.name}}</h4>
+                </header>
+                <a href="#menschen/{{properties.name}}">mehr</a>
+            </article>
+            {{/features}}
+        </script>        
+        <div id="target" />
     </section>
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
-        <a href="#"><i class="fa fa-facebook-official"></i></a>
-        <a href="#"><i class="fa fa-pinterest-p"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-flickr"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <p class="w3-medium">
-            Powered by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-        </p>
     </footer>
 
     <script type="text/javascript">
-        initmap();
+        var data;
+        $.getJSON("map2.geojson", function(result) {
+            data = result;
+            initmap();
+
+            var template = document.getElementById('template').innerHTML;
+            Mustache.parse(template);
+            var rendered = Mustache.render(template, data);
+            document.getElementById('target').innerHTML = rendered;
+        });
+
 
         // Automatic Slideshow - change image every 3 seconds
         var myIndex = 0;
+        console.log("Location: " + window.location.hash);
     </script>
 
 </body>

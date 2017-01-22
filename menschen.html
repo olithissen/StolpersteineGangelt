@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/MarkerCluster.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/MarkerCluster.Default.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css" />
+<style>
+    .engraving {
+        text-align: center;
+    }
+
+    .name {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/leaflet.markercluster.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script type="text/javascript" src="leafletembed.js"></script>
+<script type="text/javascript" src="querystring.js"></script>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="w3-navbar w3-black">
+            <li><a href="#stolpersteine">Stolpersteine in Gangelt</a></li>
+            <li><a href="#menschen">Menschen</a></li>
+        </ul>
+    </nav>
+
+    <!-- Slide Show -->
+    <!-- <section> <img class="mySlides" src="16-9.png"
+style="width:100%;height:400px"> </section> -->
+    <!-- Map Description -->
+    <section>
+        <div id="map" style="width:100%;height:400px"></div>
+    </section>
+
+    <section id="stolpersteine" class="w3-container w3-center w3-content" style="max-width:600px">
+        <h2 class="w3-wide">Stolpersteine</h2>
+        <p class="w3-opacity"><i>in Gangelt</i></p>
+        <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
+
+    <!--<section id="menschen" class="w3-row-padding w3-center">-->
+    <section id="menschen" class="w3-row-padding w3-center w3-light-grey">
+        <h2>Menschen</h2>
+        <script id="template" type="x-tmpl-mustache">
+            {{#features}}
+            <article class="w3-third">
+                <header>
+                    <h4>{{properties.name}}</h4>
+                </header>
+                <a href="#menschen/{{properties.name}}">mehr</a>
+            </article>
+            {{/features}}
+        </script>
+        <div id="target" />
+    </section>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+    </footer>
+
+    <script type="text/javascript">
+        var data;
+        $.getJSON("map2.geojson", function(result) {
+            data = result;
+            initmap();
+
+            var template = document.getElementById('template').innerHTML;
+            Mustache.parse(template);
+            var rendered = Mustache.render(template, data);
+            document.getElementById('target').innerHTML = rendered;
+        });
+
+
+        // Automatic Slideshow - change image every 3 seconds
+        var myIndex = 0;
+        console.log("Location: " + window.location.hash);
+    </script>
+
+</body>
+
+</html>
